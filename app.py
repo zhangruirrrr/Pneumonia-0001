@@ -13,7 +13,7 @@ def upload_t():
         filename=secure_filename(file.filename)
         file.save(app.config("./static/"+filename)) #Heroku no need static
         file=open(app.config("./static/"+filename,"r")) #Heroku no need static
-        model=load_model("Pneumonia")
+        model=load_model("pneumonia")
         image=cv2.imread("./static/"+filename)
         gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
         img=cv2.merge([gray,gray,gray])
